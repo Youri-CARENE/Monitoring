@@ -1,0 +1,11 @@
+Utilisez des étiquettes pour organiser les mesures : utilisez des étiquettes pour organiser les mesures dans Prometheus. Les étiquettes sont des paires clé-valeur qui permettent de regrouper les mesures en fonction de leurs caractéristiques communes. Par exemple, vous pouvez utiliser des étiquettes pour organiser les mesures en fonction de l'environnement de déploiement (production, staging, etc.).
+
+Utilisez des règles d'alerte pour surveiller les métriques : utilisez les règles d'alerte de Prometheus pour surveiller les métriques et déclencher des alertes en cas de problème. Les règles d'alerte permettent de définir des seuils et des conditions pour déclencher des alertes, et peuvent être configurées pour envoyer des notifications par email, Slack, etc.
+
+Utilisez les requêtes PromQL pour interroger les métriques : utilisez les requêtes PromQL de Prometheus pour interroger les métriques et générer des tableaux de bord. PromQL est un langage de requête puissant qui permet de filtrer, agréger et transformer les métriques dans Prometheus.
+
+Utilisez les exports pour collecter des métriques à partir d'autres sources : utilisez les exports de Prometheus pour collecter des métriques à partir d'autres sources, telles que des applications tierces ou des systèmes externes. Les exports sont des applications qui exposent des métriques au format Prometheus, et qui peuvent être facilement intégrées à votre environnement de surveillance.
+
+Utilisez les enregistreurs de journal pour collecter des événements : utilisez les enregistreurs de journal de Prometheus pour collecter des événements à partir des fichiers journaux de vos applications. Les enregistreurs de journal peuvent être configurés pour extraire des informations spécifiques à partir des fichiers journaux, et pour les ajouter en tant que métriques dans Prometheus.
+
+Utilisez les règles de relabeling pour modifier les étiquettes : utilisez les règles de relabeling de Prometheus pour modifier les étiquettes des métriques à la volée. Les règles de relabeling permettent de modifier les étiquettes en fonction de certaines conditions, ce qui peut être utile pour corriger des erreurs ou pour normaliser les données de surveillance.
