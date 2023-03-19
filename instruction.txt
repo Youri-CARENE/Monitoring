@@ -1,0 +1,1 @@
+Enregistrez ce fichier sous le nom templates/index.html et exécutez le script Python. Vous devriez pouvoir voir la présentation HTML en visitant http://localhost:5000/ dans votre navigateur web.
