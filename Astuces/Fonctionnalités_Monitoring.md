@@ -18,7 +18,9 @@ Alertes et notifications
 Alertes : envoi d'une notification lorsqu'une métrique dépasse un seuil spécifié.
 Notifications : envoi de notifications à des canaux tels que Slack, PagerDuty, Email, etc.
 Mécanismes de répétition : envoi d'une alerte répétée jusqu'à ce que l'état de la métrique revienne à la normale.
-Dashboarding
+Dashboarding    
+
+
 
 Visualisation des données de monitoring sous forme de tableaux de bord pour permettre une vue d'ensemble rapide des performances du système.
 Affichage des données en temps réel pour une surveillance continue.
