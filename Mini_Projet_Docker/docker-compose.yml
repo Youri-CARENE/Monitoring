@@ -1,0 +1,37 @@
+version: '3'
+
+services:
+  prometheus:
+    build:
+      context: .
+      dockerfile: Dockerfile.prometheus
+    ports:
+      - '9090:9090'
+    volumes:
+      - prometheus_data:/prometheus
+    restart: always
+
+  grafana:
+    build:
+      context: .
+      dockerfile: Dockerfile.grafana
+    ports:
+      - '3000:3000'
+    volumes:
+      - grafana_data:/var/lib/grafana
+    restart: always
+
+  flaskapp:
+    build:
+      context: .
+      dockerfile: Dockerfile.flask
+    ports:
+      - '5000:5000'
+    volumes:
+      - flask_data:/app/data
+    restart: always
+
+volumes:
+  prometheus_data:
+  grafana_data:
+  flask_data:
