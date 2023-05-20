@@ -1,29 +1,42 @@
-Ouvrez un terminal et exécutez la commande suivante pour mettre à jour la liste des paquets et installer les mises à jour disponibles:
+# Installer et Configurer Prometheus et Grafana
 
- 
+## Mise à jour du système
+
+Pour mettre à jour la liste des paquets et installer les mises à jour disponibles, exécuter la commande suivante dans un terminal :
+
+``` 
 sudo apt update && sudo apt upgrade -y
-Installer Prometheus:
-a. Créez un utilisateur Prometheus et téléchargez le binaire:
+```
 
- 
+## Installer Prometheus
+
+1. **Créer un utilisateur Prometheus et télécharger le binaire**:
+
+``` 
 sudo useradd --no-create-home --shell /bin/false prometheus
 wget https://github.com/prometheus/prometheus/releases/download/v2.30.3/prometheus-2.30.3.linux-amd64.tar.gz
-b. Extrayez l'archive et déplacez les fichiers dans les répertoires appropriés:
+```
 
- 
+2. **Extraire l'archive et déplacer les fichiers dans les répertoires appropriés**:
+
+``` 
 tar xvf prometheus-2.30.3.linux-amd64.tar.gz
 sudo mv prometheus-2.30.3.linux-amd64/prometheus /usr/local/bin/
 sudo mv prometheus-2.30.3.linux-amd64/promtool /usr/local/bin/
 sudo mkdir /etc/prometheus
 sudo mv prometheus-2.30.3.linux-amd64/prometheus.yml /etc/prometheus/
 sudo chown -R prometheus:prometheus /etc/prometheus
-c. Créez un fichier de service systemd pour Prometheus:
+```
 
- 
+3. **Créer un fichier de service systemd pour Prometheus**:
+
+``` 
 sudo nano /etc/systemd/system/prometheus.service
-Ajoutez le contenu suivant au fichier:
+```
 
- 
+Ajouter le contenu suivant au fichier :
+
+``` 
 [Unit]
 Description=Prometheus
 Wants=network-online.target
@@ -41,40 +54,54 @@ ExecStart=/usr/local/bin/prometheus \
 
 [Install]
 WantedBy=multi-user.target
-d. Activez et démarrez le service Prometheus:
+```
 
- 
+4. **Activer et démarrer le service Prometheus**:
+
+``` 
 sudo systemctl daemon-reload
 sudo systemctl enable prometheus
 sudo systemctl start prometheus
+```
+
 Prometheus est maintenant installé et fonctionne sur le port 9090.
 
-Installer Grafana:
-a. Ajoutez le dépôt Grafana:
+## Installer Grafana
 
- 
+1. **Ajouter le dépôt Grafana**:
+
+``` 
 wget -q -O - https://packages.grafana.com/gpg.key | sudo apt-key add -
 echo "deb https://packages.grafana.com/oss/deb stable main" | sudo tee -a /etc/apt/sources.list.d/grafana.list
-b. Installez Grafana:
+```
 
- 
+2. **Installer Grafana**:
+
+``` 
 sudo apt update
 sudo apt install -y grafana
-c. Activez et démarrez le service Grafana:
+```
 
- 
+3. **Activer et démarrer le service Grafana**:
+
+``` 
 sudo systemctl enable grafana-server
 sudo systemctl start grafana-server
+```
+
 Grafana est maintenant installé et fonctionne sur le port 3000.
 
-Configurer Grafana:
-a. Ouvrez votre navigateur et accédez à http://<IP_de_votre_serveur>:3000.
+## Configurer Grafana
 
-b. Connectez-vous avec l'identifiant par défaut (admin) et le mot de passe (admin). Vous serez invité à changer le mot de passe après la première connexion.
+1. **Accéder à Grafana**:
 
-c. Ajoutez Prometheus comme source de données:
+Ouvrir un navigateur et accéder à `http://<IP_de_votre_serveur>:3000`.
 
-Cliquez sur l'icône de l'engrenage (Configuration) dans la barre latérale gauche.
-Sélectionnez "Data Sources".
-Cliquez sur "Add data source".
-Choisissez "Prometheus"
+2. **Se connecter à Grafana**:
+
+Se connecter avec l'identifiant par défaut (`admin`) et le mot de passe (`admin`). Une demande de changement de mot de passe apparait après la première connexion.
+
+3. **Ajouter Prometheus comme source de données**:
+
+- Cliquer sur l'icône de l'engrenage (Configuration) dans la barre latérale gauche.
+- Sélection
