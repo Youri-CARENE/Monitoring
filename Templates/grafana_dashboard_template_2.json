@@ -1,0 +1,61 @@
+{
+    "dashboard": {
+      "id": null,
+      "title": "Advanced Dashboard",
+      "tags": ["advanced"],
+      "timezone": "browser",
+      "panels": [
+        {
+          "type": "graph",
+          "title": "CPU Usage",
+          "datasource": "Prometheus",
+          "targets": [
+            {
+              "expr": "100 - (avg by (instance) (irate(node_cpu_seconds_total{mode='idle'}[5m])) * 100)",
+              "interval": "",
+              "legendFormat": "{{instance}}",
+              "refId": "A"
+            }
+          ]
+        },
+        {
+          "type": "graph",
+          "title": "Memory Usage",
+          "datasource": "Prometheus",
+          "targets": [
+            {
+              "expr": "node_memory_MemTotal_bytes - node_memory_MemFree_bytes - node_memory_Buffers_bytes - node_memory_Cached_bytes",
+              "interval": "",
+              "legendFormat": "{{instance}}",
+              "refId": "B"
+            }
+          ]
+        },
+        {
+          "type": "graph",
+          "title": "Disk IO",
+          "datasource": "Prometheus",
+          "targets": [
+            {
+              "expr": "rate(node_disk_io_time_seconds_total[5m])",
+              "interval": "",
+              "legendFormat": "{{device}}",
+              "refId": "C"
+            }
+          ]
+        },
+        {
+          "type": "stat",
+          "title": "Uptime",
+          "datasource": "Prometheus",
+          "targets": [
+            {
+              "expr": "node_time_seconds - node_boot_time_seconds",
+              "refId": "D"
+            }
+          ]
+        }
+      ]
+    }
+  }
+  
