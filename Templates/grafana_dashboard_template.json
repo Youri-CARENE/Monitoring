@@ -1,0 +1,24 @@
+{
+    "dashboard": {
+      "id": null,
+      "title": "Example Dashboard",
+      "tags": [],
+      "timezone": "browser",
+      "panels": [
+        {
+          "type": "graph",
+          "title": "Example Graph",
+          "datasource": "Prometheus",
+          "targets": [
+            {
+              "expr": "node_cpu_seconds_total",
+              "interval": "",
+              "legendFormat": "{{cpu}}",
+              "refId": "A"
+            }
+          ]
+        }
+      ]
+    }
+  }
+  
