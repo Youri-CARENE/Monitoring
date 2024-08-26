@@ -1,37 +1,38 @@
 version: '3'
 
 services:
-  prometheus:
-    build:
-      context: .
-      dockerfile: Dockerfile.prometheus
-    ports:
-      - '9090:9090'
-    volumes:
-      - prometheus_data:/prometheus
-    restart: always
-
-  grafana:
-    build:
-      context: .
-      dockerfile: Dockerfile.grafana
-    ports:
-      - '3000:3000'
-    volumes:
-      - grafana_data:/var/lib/grafana
-    restart: always
-
   flaskapp:
+    image: flaskapp
     build:
-      context: .
+      context: ./Flask
       dockerfile: Dockerfile.flask
     ports:
-      - '5000:5000'
-    volumes:
-      - flask_data:/app/data
-    restart: always
+      - "5000:5000"
+    networks:
+      - monitoring
 
-volumes:
-  prometheus_data:
-  grafana_data:
-  flask_data:
+  prometheus:
+    image: prometheus
+    build:
+      context: ./Prometheus
+      dockerfile: Dockerfile.prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./Prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+    networks:
+      - monitoring
+
+  grafana:
+    image: grafana
+    build:
+      context: ./Grafana
+      dockerfile: Dockerfile.grafana
+    ports:
+      - "3000:3000"
+    networks:
+      - monitoring
+
+networks:
+  monitoring:
+    driver: bridge
