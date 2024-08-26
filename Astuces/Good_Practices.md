@@ -10,7 +10,6 @@
 - [Configurer un Dashboard de Monitoring](#configurer-un-dashboard-de-monitoring)
 - [Alertes et Notifications](#alertes-et-notifications)
 
-
 ---
 
 ## Introduction
@@ -57,4 +56,3 @@ Ce document est destiné à servir de guide et de tutoriel pour les meilleures p
 - Configurer des seuils pour les métriques importantes.
 - Choisir les canaux de notification (email, Slack, etc.).
 - Tester les alertes régulièrement.
-
