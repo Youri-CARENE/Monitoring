@@ -20,3 +20,4 @@ spec:
         env:
         - name: discovery.type
           value: "single-node"
+# command de deploiment kubectl apply -f elasticsearch-deployment.yaml
