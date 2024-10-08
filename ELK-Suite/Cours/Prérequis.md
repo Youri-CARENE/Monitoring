@@ -18,3 +18,4 @@
   - **Elasticsearch** : Port 9200 (API REST), 9300 (communication inter-nœuds)
   - **Kibana** : Port 5601
   - **Logstash** : Selon la configuration des inputs (par exemple 5044 pour Beats)
+ 
