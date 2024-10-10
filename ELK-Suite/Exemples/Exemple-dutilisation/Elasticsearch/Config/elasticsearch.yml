@@ -1,0 +1,10 @@
+# Elasticsearch Configuration Example
+cluster.name: monitoring-cluster
+node.name: node-1
+path.data: /var/lib/elasticsearch
+path.logs: /var/log/elasticsearch
+network.host: 0.0.0.0
+http.port: 9200
+discovery.seed_hosts: ["localhost"]
+cluster.initial_master_nodes: ["node-1"]
+xpack.security.enabled: false
