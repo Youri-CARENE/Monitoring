@@ -1,0 +1,32 @@
+{
+  "dashboard": {
+    "title": "Example ELK Monitoring Dashboard",
+    "panels": [
+      {
+        "panelIndex": "1",
+        "type": "visualization",
+        "title": "HTTP Error Rate",
+        "gridData": {
+          "x": 0,
+          "y": 0,
+          "w": 24,
+          "h": 15
+        },
+        "visualization": {
+          "type": "bar",
+          "params": {
+            "index_pattern": "logs-*",
+            "metrics": [
+              {
+                "type": "count",
+                "field": "response_code",
+                "label": "Error Count"
+              }
+            ],
+            "time_field": "@timestamp"
+          }
+        }
+      }
+    ]
+  }
+}
