@@ -1,0 +1,6 @@
+# Kibana Configuration Example
+server.port: 5601
+server.host: "0.0.0.0"
+elasticsearch.hosts: ["http://localhost:9200"]
+xpack.security.enabled: false
+logging.verbose: true
