@@ -1,7 +1,6 @@
 
 # Exemple de Monitoring d'Application
 
-Ce document décrit comment mettre en place le monitoring pour une application web, en surveillant ses performances et en détectant les erreurs rapidement.
 
 ## Étapes de Configuration
 
