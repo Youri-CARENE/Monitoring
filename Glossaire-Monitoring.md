@@ -4,15 +4,19 @@
 **Définition :** Mécanisme pour notifier les équipes lorsque certaines conditions ou seuils sont atteints ou dépassés. Les alertes peuvent être configurées avec Prometheus pour surveiller des métriques spécifiques et sont envoyées via Alertmanager.
 
 ## Alertmanager
+
 **Définition :** Composant de Prometheus responsable de la gestion des alertes envoyées par Prometheus. Il permet de regrouper, de mettre en sourdine ou de rediriger les notifications d'alerte vers des canaux spécifiques (emails, Slack, etc.).
 
 ## Dashboard
+
 **Définition :** Interface visuelle dans Grafana utilisée pour afficher et suivre les métriques de monitoring sous forme de graphiques, tableaux et autres visualisations. Les dashboards permettent de comprendre rapidement l'état de l'infrastructure.
 
 ## Exporter
+
 **Définition :** Composant logiciel qui expose les métriques dans un format lisible par Prometheus. Par exemple, `node_exporter` est utilisé pour surveiller les métriques des systèmes Linux.
 
 ## Grafana
+
 **Définition :** Outil open-source utilisé pour la visualisation de données de monitoring. Grafana se connecte à plusieurs sources de données, y compris Prometheus, et permet de créer des dashboards interactifs.
 
 ## Labels
