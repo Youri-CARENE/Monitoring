@@ -1,7 +1,6 @@
 
 # Exemple de Tableau de Bord Grafana
 
-Ce document présente un exemple de tableau de bord pour monitorer un serveur web. Ce tableau de bord permet de suivre les métriques essentielles comme l'utilisation du CPU, la mémoire, et le trafic réseau.
 
 ## Exemple de Configuration
 

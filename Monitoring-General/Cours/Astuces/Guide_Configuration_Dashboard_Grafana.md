@@ -1,7 +1,6 @@
 
 # Guide de Configuration des Tableaux de Bord dans Grafana
 
-Ce guide explique comment configurer des tableaux de bord dans Grafana pour visualiser les métriques de monitoring. Vous apprendrez comment ajouter des sources de données, créer des panneaux, et configurer les paramètres de base.
 
 ## Étapes de Configuration
 
